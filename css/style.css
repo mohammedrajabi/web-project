@@ -586,6 +586,269 @@ h2 {
   }
 }
 
+.lesson-main {
+  padding-block: 48px;
+}
+
+.lesson-heading .eyebrow span {
+  margin-inline: 4px;
+}
+
+.lesson-heading h1 {
+  margin-top: 16px;
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  line-height: 1.25;
+}
+
+.lesson-heading > p:last-child {
+  margin-top: 16px;
+}
+
+.lesson-section {
+  margin-top: 48px;
+}
+
+.lesson-main h2 {
+  line-height: 40px;
+}
+
+.lesson-section .section-intro {
+  line-height: 24px;
+}
+
+.lesson-heading + .lesson-section {
+  margin-top: 56px;
+}
+
+.lesson-columns,
+.element-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.element-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.anatomy-grid,
+.example-grid {
+  margin-top: 18px;
+}
+
+.lesson-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--secondary);
+}
+
+.lesson-card .eyebrow,
+.code-caption {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.document-card {
+  min-height: 236px;
+}
+
+.lesson-main pre,
+.lesson-main code,
+.lesson-main textarea {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.lesson-main pre {
+  max-width: 100%;
+  margin: 16px 0 0;
+  overflow: auto;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 30px;
+  tab-size: 2;
+}
+
+.anatomy-explanation {
+  padding: 24px;
+}
+
+.lesson-main h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.anatomy-explanation ol {
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.element-card {
+  min-height: 168px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.element-card ul {
+  margin-top: 16px;
+}
+
+.element-card code,
+.anatomy-explanation code,
+.lesson-section > p code {
+  font-size: 0.95em;
+}
+
+.source-card,
+.workspace {
+  background: var(--primary);
+}
+
+.code-caption {
+  display: block;
+  color: var(--muted);
+}
+
+.lesson-main .example-code {
+  margin-top: 16px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.example-code span {
+  color: var(--accent);
+}
+
+.preview-card {
+  min-height: 212px;
+}
+
+.preview-card .code-caption {
+  text-transform: uppercase;
+}
+
+.preview-card iframe {
+  display: block;
+  width: 100%;
+  height: 122px;
+  margin-top: 20px;
+  border: 0;
+  background: var(--secondary);
+}
+
+.workspace {
+  margin-top: 20px;
+}
+
+.workspace label {
+  text-transform: uppercase;
+}
+
+.editor-area {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.lesson-main .line-numbers {
+  margin: 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.editor-area textarea {
+  display: block;
+  width: 100%;
+  min-height: 84px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  resize: vertical;
+  background: transparent;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 28px;
+  tab-size: 2;
+}
+
+.practice-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.practice-checklist span {
+  margin-right: 4px;
+}
+
+.practice-checklist .check-passed {
+  color: var(--success);
+}
+
+.practice-checklist .check-missing {
+  color: var(--error);
+}
+
+.next-lesson {
+  min-width: 200px;
+  margin-top: 20px;
+}
+
+@media (hover: hover) {
+  .element-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px #0004;
+  }
+}
+
+@media (max-width: 920px) {
+  .element-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .element-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .lesson-main {
+    padding-block: 36px;
+  }
+
+  .lesson-section,
+  .lesson-heading + .lesson-section {
+    margin-top: 40px;
+  }
+
+  .lesson-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lesson-card {
+    padding: 20px;
+  }
+
+  .anatomy-explanation {
+    padding: 0;
+  }
+
+  .practice-checklist {
+    column-gap: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition: none !important;

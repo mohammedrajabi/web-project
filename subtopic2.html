@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn CSS selectors, properties, and the box model, then practise styling your welcome page.">
+  <title>CSS Foundations | CodeStart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <link rel="stylesheet" href="css/css-lesson.css">
+  <script src="js/css-lesson.js" defer></script>
+</head>
+<body>
+  <a class="skip-link button" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html"><span aria-hidden="true">&lt;/&gt;</span> CodeStart</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="subtopic1.html">HTML</a></li>
+          <li><a href="subtopic2.html" aria-current="page">CSS</a></li>
+          <li><a href="subtopic3.html">JavaScript</a></li>
+          <li><a href="planning-design.html">Planning &amp; Design</a></li>
+          <li><a href="reflection-ai-report.html">Reflection &amp; AI</a></li>
+          <li><a href="overview.html">Overview</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container lesson-main css-lesson" id="main" tabindex="-1">
+    <header class="lesson-heading">
+      <p class="eyebrow">02 <span aria-hidden="true">/</span> CSS foundations</p>
+      <h1>CSS: style and arrange your page</h1>
+      <p>Lesson 2 of 3 &nbsp;/&nbsp; Structure → Style → Interactivity</p>
+    </header>
+
+    <section class="lesson-section" aria-labelledby="css-introduction">
+      <h2 id="css-introduction">What is CSS?</h2>
+      <p class="section-intro">CSS (Cascading Style Sheets) controls how HTML looks. Use rules to change text, spacing, borders, and page layout while keeping content separate from presentation.</p>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="selectors-properties">
+      <h2 id="selectors-properties">Selectors and properties</h2>
+      <div class="element-grid">
+        <article class="lesson-card element-card selector-card">
+          <h3>01 / Select an element</h3>
+          <ul>
+            <li>Type selector: <code>p</code></li>
+            <li>Class selector: <code>.lesson</code></li>
+            <li>ID selector: <code>#welcome</code></li>
+          </ul>
+        </article>
+        <article class="lesson-card element-card selector-card">
+          <h3>02 / Set a property</h3>
+          <ul>
+            <li><code>font-size</code>: text size</li>
+            <li><code>margin</code>: outer spacing</li>
+            <li><code>border</code>: visible outline</li>
+          </ul>
+        </article>
+        <article class="lesson-card element-card selector-card">
+          <h3>03 / Choose a value</h3>
+          <ul>
+            <li><code>p { font-size: 18px; }</code></li>
+            <li><code>.lesson { padding: 24px; }</code></li>
+            <li>A declaration is property + value.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="box-model-title">
+      <h2 id="box-model-title">Understand the box model</h2>
+      <div class="lesson-columns box-model-grid">
+        <figure class="lesson-card box-margin" aria-label="The CSS box model, from outside to inside: margin, border, padding, and content.">
+          <div class="eyebrow">Margin</div>
+          <div class="box-border">
+            <div class="eyebrow">Border</div>
+            <div class="box-padding">
+              <div class="eyebrow">Padding</div>
+              <div class="box-content">CONTENT — text or other elements</div>
+            </div>
+          </div>
+        </figure>
+        <div class="box-explanation">
+          <h3>Every element is a box</h3>
+          <ul>
+            <li>Content holds the text or media.</li>
+            <li>Padding adds space inside the border.</li>
+            <li>Border outlines the element.</li>
+            <li>Margin separates it from nearby elements.</li>
+          </ul>
+          <p>Tip: <code>box-sizing: border-box</code> keeps width calculations predictable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="code-example">
+      <h2 id="code-example">Code example</h2>
+      <div class="lesson-columns example-grid">
+        <div class="lesson-card source-card">
+          <p class="code-caption">styles.css &nbsp;•&nbsp; CSS</p>
+          <pre class="css-example-code" id="css-example" tabindex="0" aria-label="CSS lesson card example"><code>.lesson {
+  padding: 24px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  color: #F8FAFC;
+}</code></pre>
+        </div>
+        <div class="lesson-card preview-card css-preview-card">
+          <p class="code-caption" id="preview-label">Browser preview</p>
+          <iframe id="css-preview" title="Browser preview of the CSS example" sandbox="allow-same-origin" srcdoc="&lt;article&gt;&lt;h1&gt;Your first lesson&lt;/h1&gt;&lt;p&gt;A little CSS makes a big difference.&lt;/p&gt;&lt;/article&gt;"></iframe>
+          <p class="preview-metrics" id="preview-metrics">24px padding &nbsp;/&nbsp; 1px border &nbsp;/&nbsp; 12px radius</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lesson-section" aria-labelledby="practice-title">
+      <h2 id="practice-title">Practice: style your welcome page</h2>
+      <p class="section-intro" id="practice-instructions">Add a class to your HTML. Set the heading size, apply 24px of padding to a content box, and add a 1px border.</p>
+      <div class="lesson-card workspace css-workspace">
+        <label class="code-caption" for="css-editor">Your workspace &nbsp;/&nbsp; <span>styles.css</span></label>
+        <div class="editor-area">
+          <textarea id="css-editor" aria-describedby="practice-instructions css-feedback" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" disabled>.welcome { padding: 24px; border: 1px solid #334155; }
+h1 { font-size: 32px; }</textarea>
+        </div>
+        <p class="css-feedback" id="css-feedback" role="status">Check your work: <span data-check="selector">class selector</span><span aria-hidden="true"> • </span><span data-check="type">readable type</span><span aria-hidden="true"> • </span><span data-check="spacing">visible box spacing</span></p>
+      </div>
+      <a class="button next-lesson" href="subtopic3.html">Next: JavaScript <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="subtopic1.html">HTML</a></li>
+          <li><a href="subtopic2.html" aria-current="page">CSS</a></li>
+          <li><a href="subtopic3.html">JavaScript</a></li>
+          <li><a href="planning-design.html">Planning &amp; Design</a></li>
+          <li><a href="reflection-ai-report.html">Reflection &amp; AI</a></li>
+          <li><a href="overview.html">Overview</a></li>
+        </ul>
+      </nav>
+      <ul class="footer-meta">
+        <li>© 2026 CodeStart</li>
+        <li>Educational project</li>
+        <li><button class="inline-button" type="button" data-dialog="privacy" aria-haspopup="dialog">Privacy</button></li>
+        <li><button class="inline-button" type="button" data-dialog="accessibility" aria-haspopup="dialog">Accessibility</button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <dialog class="info-dialog" id="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Privacy</h2>
+    <p>The registration form is a demo. Your entries are checked in your browser. CodeStart does not send or store the details you enter.</p>
+    <form method="dialog"><button class="button" autofocus>Close</button></form>
+  </dialog>
+  <dialog class="info-dialog" id="accessibility" aria-labelledby="accessibility-title">
+    <h2 id="accessibility-title">Accessibility</h2>
+    <p>Use the Tab key to move through links, buttons, and form fields. The first link skips to the main content. The page respects your device’s reduced-motion setting.</p>
+    <form method="dialog"><button class="button" autofocus>Close</button></form>
+  </dialog>
+</body>
+</html>

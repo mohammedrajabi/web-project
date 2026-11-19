@@ -1,0 +1,148 @@
+.building-block {
+  min-height: 208px;
+}
+
+.javascript-lesson .element-grid {
+  margin-top: 18px;
+}
+
+.building-block h3 {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+.building-block h3 + p {
+  margin-top: 16px;
+}
+
+.building-block code {
+  font-family: inherit;
+}
+
+.building-block .concept-code {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.javascript-example {
+  margin-top: 19px;
+}
+
+.code-explanation {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.exercise-grid {
+  margin-top: 20px;
+}
+
+.javascript-workspace .eyebrow,
+.greeting-preview .eyebrow {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.javascript-workspace label {
+  display: block;
+}
+
+.javascript-workspace .editor-area {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.javascript-workspace .editor-area textarea {
+  height: 224px;
+  min-height: 224px;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.greeting-preview h3 {
+  margin-top: 16px;
+  font-size: 22px;
+  line-height: 32px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.greeting-preview .button {
+  min-width: 160px;
+  margin-top: 16px;
+}
+
+.expected-greeting {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.exercise-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+#run-exercise {
+  min-width: 180px;
+}
+
+.secondary-button {
+  min-width: 120px;
+  border: 1px solid var(--accent);
+  background: var(--primary);
+  color: var(--accent);
+}
+
+.exercise-feedback {
+  margin-top: 20px;
+}
+
+.feedback-title {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+#feedback-detail {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
+.exercise-feedback[data-state="error"] .feedback-title {
+  color: var(--error);
+}
+
+.exercise-feedback[data-state="success"] .feedback-title {
+  color: var(--success);
+}
+
+.exercise-feedback[data-state="error"] #feedback-detail {
+  color: var(--error);
+}
+
+.javascript-lesson #console-output {
+  max-height: 240px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.javascript-lesson .next-lesson {
+  min-width: 230px;
+}
+
+@media (max-width: 920px) {
+  .building-block {
+    min-height: auto;
+  }
+}
