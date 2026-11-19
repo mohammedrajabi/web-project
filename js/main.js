@@ -20,7 +20,10 @@ menuToggle.addEventListener("click", () => {
 });
 
 document.querySelector(".site-header").addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+  if (
+    event.key === "Escape" &&
+    menuToggle.getAttribute("aria-expanded") === "true"
+  ) {
     menuToggle.focus();
     setMenuOpen(false);
   }
@@ -50,14 +53,17 @@ if (registration) {
     },
     {
       input: registration.elements.email,
-      isValid: (input) => !input.validity.typeMismatch && /@[^@]+\.[^@.]+$/.test(input.value),
+      isValid: (input) =>
+        !input.validity.typeMismatch && /@[^@]+\.[^@.]+$/.test(input.value),
       message: "Enter a valid email address, such as you@example.com.",
     },
   ];
 
   function validateField({ input, isValid, message }) {
     const valid = isValid(input);
-    const error = document.getElementById(input.getAttribute("aria-describedby"));
+    const error = document.getElementById(
+      input.getAttribute("aria-describedby"),
+    );
 
     input.setAttribute("aria-invalid", String(!valid));
     error.hidden = valid;

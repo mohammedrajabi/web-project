@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn HTML document structure, common elements, and practise building your first welcome page.">
-  <title>HTML Foundations | CodeStart</title>
+  <meta name="description"
+    content="Get to know the building blocks of a website, then write your own HTML and see it come to life in the browser.">
+  <title>Learn HTML — Build Your First Web Page | CodeStart</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/course.css">
   <script src="js/main.js" defer></script>
-  <script src="js/html-lesson.js" defer></script>
+  <script src="js/course.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/html-playground.js" defer></script>
 </head>
-<body>
+
+<body class="course-page">
   <a class="skip-link button" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
@@ -32,113 +38,211 @@
     </div>
   </header>
 
-  <main class="container lesson-main" id="main" tabindex="-1">
-    <header class="lesson-heading">
-      <p class="eyebrow">01 <span aria-hidden="true">/</span> HTML foundations</p>
-      <h1>HTML: structure your first page</h1>
-      <p>Lesson 1 of 3 &nbsp;/&nbsp; Structure → Style → Interactivity</p>
-    </header>
-
-    <section class="lesson-section" aria-labelledby="html-introduction">
-      <h2 id="html-introduction">What is HTML?</h2>
-      <p class="section-intro">HTML (HyperText Markup Language) gives a web page its structure. Elements describe content such as headings, paragraphs, links, and forms.</p>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="document-anatomy">
-      <h2 id="document-anatomy">Anatomy of an HTML document</h2>
-      <div class="lesson-columns anatomy-grid">
-        <div class="lesson-card document-card">
-          <p class="eyebrow">Document structure</p>
-          <pre class="document-code" tabindex="0" aria-label="HTML document structure"><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;Page information&lt;/head&gt;
-  &lt;body&gt;Visible content&lt;/body&gt;
+  <main id="main" tabindex="-1">
+    <div class="course-hero tone-html">
+      <div class="container">
+        <a class="back-link" href="home.html#learning-paths">← All courses</a>
+        <p class="eyebrow">Structure · Beginner · 5 lessons</p>
+        <h1>Learn HTML <span>Build Your First Web Page</span></h1>
+        <p class="lede">Get to know the building blocks of a website, then write your own HTML and see it come to life
+          in the browser.</p>
+        <div class="actions"><a class="button button-primary" href="#lessons">Start the Lessons<svg aria-hidden="true"
+              width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12h15m-6-6 6 6-6 6" />
+            </svg></a><a class="button button-secondary" href="#playground">Jump to Practice</a></div>
+      </div>
+    </div>
+    <div class="container course-layout tone-html" data-course="html">
+      <aside class="panel lesson-sidebar" aria-label="Course contents">
+        <div class="sidebar-top">
+          <h2>Course contents</h2>
+          <p id="lesson-progress-label" role="status">0 of 5 lessons complete</p><progress value="0" max="5"
+            aria-labelledby="lesson-progress-label"></progress>
+        </div>
+        <nav aria-label="Lessons"><a href="#lesson-1"><span class="lesson-number">01</span>What is HTML?<span
+              class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg><span class="sr-only">Completed</span></span></a><a href="#lesson-2"><span
+              class="lesson-number">02</span>Document structure<span class="lesson-check" hidden><svg aria-hidden="true"
+                width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg><span class="sr-only">Completed</span></span></a><a href="#lesson-3"><span
+              class="lesson-number">03</span>Headings and paragraphs<span class="lesson-check" hidden><svg
+                aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg><span class="sr-only">Completed</span></span></a><a href="#lesson-4"><span
+              class="lesson-number">04</span>Links and images<span class="lesson-check" hidden><svg aria-hidden="true"
+                width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg><span class="sr-only">Completed</span></span></a><a href="#lesson-5"><span
+              class="lesson-number">05</span>Lists and forms<span class="lesson-check" hidden><svg aria-hidden="true"
+                width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6" />
+              </svg><span class="sr-only">Completed</span></span></a><a href="#playground"><svg aria-hidden="true"
+              width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="m8 5 12 7-12 7Z" />
+            </svg> Practice</a><a href="#knowledge-check"><svg aria-hidden="true" width="15" height="15"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m5 12 4 4L19 6" />
+            </svg> Knowledge check</a></nav>
+      </aside>
+      <div class="course-content">
+        <section id="lessons" class="course-section" aria-labelledby="lessons-title">
+          <p class="eyebrow">Lessons</p>
+          <h2 id="lessons-title">HTML fundamentals</h2>
+          <article class="panel lesson" id="lesson-1">
+            <p class="eyebrow">Lesson 1 of 5</p>
+            <h3 tabindex="-1">What is HTML?</h3>
+            <p>HTML stands for HyperText Markup Language. It uses elements to describe the content and meaning of a
+              page. A paragraph element usually has an opening tag, content, and a closing tag.</p>
+            <pre tabindex="0"><code>&lt;p&gt;This is my first paragraph.&lt;/p&gt;</code></pre>
+            <div class="actions"><button type="button" class="button button-secondary complete-lesson"
+                aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 4 4L19 6" />
+                </svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-2">Next Lesson
+                <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg></a></div>
+          </article>
+          <article class="panel lesson" id="lesson-2" hidden>
+            <p class="eyebrow">Lesson 2 of 5</p>
+            <h3 tabindex="-1">Document structure</h3>
+            <p>Every full page starts with a doctype. The html element contains the head, which holds information for
+              the browser, and the body, which holds the visible content.</p>
+            <pre tabindex="0"><code>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My site&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+  &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-        </div>
-        <div class="anatomy-explanation">
-          <h3>Build from the outside in</h3>
-          <ol>
-            <li>Declare the HTML document type.</li>
-            <li>Wrap the document in <code>&lt;html&gt;</code>.</li>
-            <li>Add a <code>&lt;head&gt;</code> for metadata and the title.</li>
-            <li>Put visible elements inside <code>&lt;body&gt;</code>.</li>
-          </ol>
-        </div>
+            <div class="actions"><button type="button" class="button button-secondary complete-lesson"
+                aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 4 4L19 6" />
+                </svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-3">Next Lesson
+                <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg></a></div>
+          </article>
+          <article class="panel lesson" id="lesson-3" hidden>
+            <p class="eyebrow">Lesson 3 of 5</p>
+            <h3 tabindex="-1">Headings and paragraphs</h3>
+            <p>Use h1 for the main page heading, h2 for the major sections, and h3 for subsections. Use p for
+              paragraphs. A meaningful hierarchy helps readers navigate the content.</p>
+            <pre tabindex="0"><code>&lt;h1&gt;My travel journal&lt;/h1&gt;
+&lt;h2&gt;Bahrain&lt;/h2&gt;
+&lt;p&gt;Today I explored the old market.&lt;/p&gt;</code></pre>
+            <div class="actions"><button type="button" class="button button-secondary complete-lesson"
+                aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 4 4L19 6" />
+                </svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-4">Next Lesson
+                <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg></a></div>
+          </article>
+          <article class="panel lesson" id="lesson-4" hidden>
+            <p class="eyebrow">Lesson 4 of 5</p>
+            <h3 tabindex="-1">Links and images</h3>
+            <p>A link uses href to identify its destination. An image uses src for its file and alt for a text
+              alternative that describes its purpose. Use an empty alt attribute for purely decorative images.</p>
+            <pre tabindex="0"><code>&lt;a href="about.html"&gt;About me&lt;/a&gt;
+&lt;img src="market.jpg" alt="Stalls in the old market"&gt;</code></pre>
+            <div class="actions"><button type="button" class="button button-secondary complete-lesson"
+                aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 4 4L19 6" />
+                </svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-5">Next Lesson
+                <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg></a></div>
+          </article>
+          <article class="panel lesson" id="lesson-5" hidden>
+            <p class="eyebrow">Lesson 5 of 5</p>
+            <h3 tabindex="-1">Lists and forms</h3>
+            <p>Use ul for a list without a required order, and ol when the order matters. A form groups inputs. Connect
+              each label to its input by matching for with the input’s id.</p>
+            <pre tabindex="0"><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;form&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" required&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            <div class="actions"><button type="button" class="button button-secondary complete-lesson"
+                aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m5 12 4 4L19 6" />
+                </svg> <span>Mark Complete</span></button><a class="button button-text" href="#playground">Go to
+                Practice <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg></a></div>
+          </article>
+        </section>
+        <section class="course-section" id="playground" hidden aria-labelledby="playground-title">
+          <p class="eyebrow">Practice</p>
+          <h2 id="playground-title">HTML playground</h2>
+          <p>Pick an example, change the HTML, then run it to see the result.</p>
+          <div class="panel playground">
+            <div class="lab-toolbar"><label for="html-example">Example</label><select id="html-example">
+                <option value="first">First web page</option>
+                <option value="list">A list of favorites</option>
+                <option value="form">A contact form</option>
+              </select><button type="button" id="reset-html" class="button button-secondary">Reset</button><button
+                type="button" id="run-html" class="button button-primary"><svg aria-hidden="true" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="m8 5 12 7-12 7Z" />
+                </svg> Run Code</button></div>
+            <div class="split">
+              <div class="editor-pane"><label for="html-code">HTML editor</label><textarea id="html-code"
+                  spellcheck="false" autocomplete="off" autocapitalize="off"></textarea></div>
+              <div class="preview-pane">
+                <p>Browser preview</p><iframe title="Rendered HTML preview" sandbox
+                  referrerpolicy="no-referrer"></iframe>
+              </div>
+            </div>
+            <p class="lab-note" id="html-status" role="status">Example ready to edit.</p>
+          </div>
+        </section>
+        <section class="course-section" id="knowledge-check" hidden aria-labelledby="quiz-title">
+          <p class="eyebrow">Knowledge check</p>
+          <h2 id="quiz-title">Test your HTML</h2>
+          <p>Choose an answer to get feedback before moving on.</p>
+          <div class="panel quiz" data-quiz="html"></div>
+        </section>
+        <div class="course-next"><a class="button button-secondary" href="subtopic2.html">Continue to CSS<svg
+              aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12h15m-6-6 6 6-6 6" />
+            </svg></a></div>
       </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="common-elements">
-      <h2 id="common-elements">Common HTML elements</h2>
-      <div class="element-grid">
-        <article class="lesson-card element-card">
-          <h3>Text &amp; hierarchy</h3>
-          <ul>
-            <li><code>&lt;h1&gt;–&lt;h6&gt;</code> &nbsp;Headings</li>
-            <li><code>&lt;p&gt;</code> &nbsp;Paragraphs</li>
-            <li><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> &nbsp;Lists</li>
-          </ul>
-        </article>
-        <article class="lesson-card element-card">
-          <h3>Links &amp; media</h3>
-          <ul>
-            <li><code>&lt;a&gt;</code> &nbsp;Navigation links</li>
-            <li><code>&lt;img&gt;</code> &nbsp;Images with alt text</li>
-            <li><code>&lt;figure&gt;</code> &nbsp;Captioned content</li>
-          </ul>
-        </article>
-        <article class="lesson-card element-card">
-          <h3>Forms &amp; structure</h3>
-          <ul>
-            <li><code>&lt;label&gt;</code> and <code>&lt;input&gt;</code> &nbsp;Fields</li>
-            <li><code>&lt;button&gt;</code> &nbsp;Actions</li>
-            <li><code>&lt;header&gt;, &lt;main&gt;, &lt;footer&gt;</code></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="code-example">
-      <h2 id="code-example">Code example</h2>
-      <div class="lesson-columns example-grid">
-        <div class="lesson-card source-card">
-          <p class="code-caption">index.html &nbsp;•&nbsp; HTML</p>
-          <pre class="example-code" tabindex="0" aria-label="Welcome page HTML example"><code><span>&lt;h1&gt;</span>Welcome to CodeStart<span>&lt;/h1&gt;</span>
-<span>&lt;p&gt;</span>I’m learning to build for the web.<span>&lt;/p&gt;</span>
-<span>&lt;a href="subtopic2.html"&gt;</span>Learn CSS →<span>&lt;/a&gt;</span></code></pre>
-        </div>
-        <div class="lesson-card preview-card">
-          <p class="code-caption" id="preview-label">Browser preview</p>
-          <iframe id="html-preview" title="Browser preview of the HTML example" sandbox="allow-same-origin allow-top-navigation-by-user-activation" srcdoc="&lt;h1&gt;Welcome to CodeStart&lt;/h1&gt;&lt;p&gt;I’m learning to build for the web.&lt;/p&gt;&lt;a href='subtopic2.html'&gt;Learn CSS →&lt;/a&gt;"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="practice-title">
-      <h2 id="practice-title">Practice: build a welcome page</h2>
-      <p class="section-intro" id="practice-instructions">Create an <code>&lt;h1&gt;</code> with your name, add a paragraph about your learning goal, and link to the CSS lesson.</p>
-      <div class="lesson-card workspace">
-        <label class="code-caption" for="html-editor">Your workspace &nbsp;/&nbsp; index.html</label>
-        <div class="editor-area">
-          <pre class="line-numbers" aria-hidden="true">1
-2
-3</pre>
-          <textarea id="html-editor" aria-describedby="practice-instructions practice-feedback" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" disabled>&lt;h1&gt;Your name&lt;/h1&gt;
-&lt;p&gt;My goal is to build my first website.&lt;/p&gt;
-&lt;a href="subtopic2.html"&gt;Continue to CSS&lt;/a&gt;</textarea>
-        </div>
-        <ul class="practice-checklist" id="practice-feedback" aria-live="polite" aria-atomic="true">
-          <li data-check="heading"><span aria-hidden="true">✓</span> One heading</li>
-          <li data-check="paragraph"><span aria-hidden="true">✓</span> One paragraph</li>
-          <li data-check="link"><span aria-hidden="true">✓</span> One working link</li>
-        </ul>
-      </div>
-      <a class="button next-lesson" href="subtopic2.html">Next: CSS <span aria-hidden="true">→</span></a>
-    </section>
+    </div>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first website.</p>
+      <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first
+        website.</p>
       <nav class="footer-nav" aria-label="Footer navigation">
         <ul>
           <li><a href="home.html">Home</a></li>
@@ -153,21 +257,26 @@
       <ul class="footer-meta">
         <li>© 2026 CodeStart</li>
         <li>Educational project</li>
-        <li><button class="inline-button" type="button" data-dialog="privacy" aria-haspopup="dialog">Privacy</button></li>
-        <li><button class="inline-button" type="button" data-dialog="accessibility" aria-haspopup="dialog">Accessibility</button></li>
+        <li><button class="inline-button" type="button" data-dialog="privacy" aria-haspopup="dialog">Privacy</button>
+        </li>
+        <li><button class="inline-button" type="button" data-dialog="accessibility"
+            aria-haspopup="dialog">Accessibility</button></li>
       </ul>
     </div>
   </footer>
 
   <dialog class="info-dialog" id="privacy" aria-labelledby="privacy-title">
     <h2 id="privacy-title">Privacy</h2>
-    <p>The registration form is a demo. Your entries are checked in your browser. CodeStart does not send or store the details you enter.</p>
+    <p>The registration form is a demo. Your entries are checked in your browser. CodeStart does not send or store the
+      details you enter.</p>
     <form method="dialog"><button class="button" autofocus>Close</button></form>
   </dialog>
   <dialog class="info-dialog" id="accessibility" aria-labelledby="accessibility-title">
     <h2 id="accessibility-title">Accessibility</h2>
-    <p>Use the Tab key to move through links, buttons, and form fields. The first link skips to the main content. The page respects your device’s reduced-motion setting.</p>
+    <p>Use the Tab key to move through links, buttons, and form fields. The first link skips to the main content. The
+      page respects your device’s reduced-motion setting.</p>
     <form method="dialog"><button class="button" autofocus>Close</button></form>
   </dialog>
 </body>
+
 </html>

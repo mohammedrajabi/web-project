@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn JavaScript variables, functions, and DOM interaction, then build an interactive greeting.">
-  <title>JavaScript Foundations | CodeStart</title>
+  <meta name="description" content="Learn how to respond to clicks, use what someone types, and update the page in real time.">
+  <title>Learn JavaScript — Make Your Website Interactive | CodeStart</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/course.css">
   <script src="js/main.js" defer></script>
-  <link rel="stylesheet" href="css/javascript-lesson.css">
-  <script src="js/javascript-lesson.js" defer></script>
+  <script src="js/course.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/js-demos.js" defer></script>
 </head>
-<body>
+<body class="course-page">
   <a class="skip-link button" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
@@ -33,90 +35,58 @@
     </div>
   </header>
 
-  <main class="container lesson-main javascript-lesson" id="main" tabindex="-1">
-    <header class="lesson-heading">
-      <p class="eyebrow">03 <span aria-hidden="true">/</span> JavaScript foundations</p>
-      <h1>JavaScript: bring your page to life</h1>
-      <p>Lesson 3 of 3 &nbsp;/&nbsp; Structure → Style → Interactivity</p>
-    </header>
-
-    <section class="lesson-section" aria-labelledby="javascript-introduction">
-      <h2 id="javascript-introduction">What is JavaScript?</h2>
-      <p class="section-intro">JavaScript adds behaviour to a web page. Store information, respond to clicks, and update the page without reloading it. Start with a small action and build from there.</p>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="building-blocks">
-      <h2 id="building-blocks">Three building blocks</h2>
-      <div class="element-grid">
-        <article class="lesson-card element-card building-block">
-          <h3>Variables</h3>
-          <p>Store a value so you can use it later. Use <code>const</code> for values that do not need reassignment.</p>
-          <p class="concept-code"><code>const learner = "Sam";</code></p>
-        </article>
-        <article class="lesson-card element-card building-block">
-          <h3>Functions</h3>
-          <p>Group instructions into a reusable action. Call the function when you need it.</p>
-          <p class="concept-code"><code>function greet() { ... }</code></p>
-        </article>
-        <article class="lesson-card element-card building-block">
-          <h3>DOM interaction</h3>
-          <p>Select an element, listen for an event, and update what appears on the page.</p>
-          <p class="concept-code"><code>button.addEventListener("click", ...)</code></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="code-example">
-      <h2 id="code-example">Code example</h2>
-      <div class="lesson-card source-card javascript-example">
-        <p class="code-caption">greeting.js &nbsp;•&nbsp; JAVASCRIPT</p>
-        <pre class="example-code" tabindex="0" aria-label="JavaScript greeting example"><code><span>const</span> button = document.querySelector(<span>"#hello"</span>);
-<span>const</span> greeting = document.querySelector(<span>"#greeting"</span>);
-
-<span>function</span> greet() { greeting.textContent = <span>"Hello, learner!"</span>; }
-button.addEventListener(<span>"click"</span>, greet);</code></pre>
-        <p class="code-explanation">Select an element &nbsp;→&nbsp; Listen for a click &nbsp;→&nbsp; Update the DOM</p>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="exercise-title">
-      <h2 id="exercise-title">Interactive exercise: make a greeting</h2>
-      <p class="section-intro" id="exercise-instructions">Write a function that updates the greeting below when the button is clicked.</p>
-      <div class="lesson-columns exercise-grid">
-        <div class="lesson-card javascript-workspace">
-          <label class="eyebrow" for="javascript-editor">Your JavaScript</label>
-          <div class="editor-area">
-            <textarea id="javascript-editor" aria-describedby="exercise-instructions exercise-feedback" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" disabled>const button = document.querySelector("#hello");
-const greeting = document.querySelector("#greeting");
-
-function greet() {
-  // Update the greeting text here
+  <main id="main" tabindex="-1">
+    <div class="course-hero tone-js"><div class="container">
+      <a class="back-link" href="home.html#learning-paths">← All courses</a>
+      <p class="eyebrow">Behavior · Beginner · 7 lessons</p>
+      <h1>Learn JavaScript <span>Make Your Website Interactive</span></h1><p class="lede">Learn how to respond to clicks, use what someone types, and update the page in real time.</p>
+      <div class="actions"><a class="button button-primary" href="#lessons">Start the Lessons<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a class="button button-secondary" href="#playground">Jump to Practice</a></div>
+    </div></div>
+    <div class="container course-layout tone-js" data-course="js">
+      <aside class="panel lesson-sidebar" aria-label="Course contents">
+        <div class="sidebar-top"><h2>Course contents</h2><p id="lesson-progress-label" role="status">0 of 7 lessons complete</p><progress value="0" max="7" aria-labelledby="lesson-progress-label"></progress></div>
+        <nav aria-label="Lessons"><a href="#lesson-1"><span class="lesson-number">01</span>What is JavaScript?<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-2"><span class="lesson-number">02</span>Variables<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-3"><span class="lesson-number">03</span>Data types<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-4"><span class="lesson-number">04</span>Functions<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-5"><span class="lesson-number">05</span>Conditions<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-6"><span class="lesson-number">06</span>Events<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-7"><span class="lesson-number">07</span>DOM manipulation<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#playground"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 12 7-12 7Z"/></svg> Practice</a><a href="#knowledge-check"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Knowledge check</a></nav>
+      </aside>
+      <div class="course-content">
+        <section id="lessons" class="course-section" aria-labelledby="lessons-title"><p class="eyebrow">Lessons</p><h2 id="lessons-title">JavaScript fundamentals</h2>
+          <article class="panel lesson" id="lesson-1"><p class="eyebrow">Lesson 1 of 7</p><h3 tabindex="-1">What is JavaScript?</h3><p>JavaScript is a programming language browsers can run. It lets a page react to events, calculate values, and update what readers see.</p><pre tabindex="0"><code>console.log('Hello from JavaScript!');</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-2">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-2" hidden><p class="eyebrow">Lesson 2 of 7</p><h3 tabindex="-1">Variables</h3><p>Use let for a variable you plan to reassign. Use const when the variable should keep its initial assignment. Pick names that explain what the value represents.</p><pre tabindex="0"><code>let count = 0;
+count = count + 1;
+const step = 1;</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-3">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-3" hidden><p class="eyebrow">Lesson 3 of 7</p><h3 tabindex="-1">Data types</h3><p>Strings represent text, numbers represent numeric values, and booleans are true or false. Quote text to distinguish it from a variable name.</p><pre tabindex="0"><code>const name = 'Mohammed';
+const score = 5;
+const isReady = true;</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-4">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-4" hidden><p class="eyebrow">Lesson 4 of 7</p><h3 tabindex="-1">Functions</h3><p>A function groups instructions you can run again. Parameters accept input when you call the function. Use return to send back a result.</p><pre tabindex="0"><code>function greet(name) {
+  return 'Hello, ' + name + '!';
 }
 
-button.addEventListener("click", greet);</textarea>
-          </div>
-        </div>
-        <div class="lesson-card greeting-preview">
-          <p class="eyebrow" id="greeting-state">Preview / initial state</p>
-          <h3 id="greeting" aria-live="polite">Your greeting appears here</h3>
-          <button class="button" type="button" id="hello" disabled>Say hello</button>
-          <p class="expected-greeting">Expected after click: Hello, learner!</p>
-        </div>
+const message = greet('Mohammed');</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-5">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-5" hidden><p class="eyebrow">Lesson 5 of 7</p><h3 tabindex="-1">Conditions</h3><p>Use if to make a decision. The browser runs the first block when the condition is true and the else block otherwise.</p><pre tabindex="0"><code>if (score &gt;= 5) {
+  console.log('Level complete');
+} else {
+  console.log('Keep practicing');
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-6">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-6" hidden><p class="eyebrow">Lesson 6 of 7</p><h3 tabindex="-1">Events</h3><p>An event signals something that happened, such as a button click. addEventListener runs a function each time that event occurs on the selected element.</p><pre tabindex="0"><code>const button = document.querySelector('button');
+button.addEventListener('click', () =&gt; {
+  console.log('Button clicked');
+});</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-7">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-7" hidden><p class="eyebrow">Lesson 7 of 7</p><h3 tabindex="-1">DOM manipulation</h3><p>The Document Object Model (DOM) represents the page as objects. Find an element with querySelector, then update textContent or change its CSS classes.</p><pre tabindex="0"><code>const heading = document.querySelector('h1');
+heading.textContent = 'Welcome back!';
+heading.classList.add('highlight');</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#playground">Go to Practice <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+        </section>
+        <section class="course-section" id="playground" hidden aria-labelledby="playground-title">
+  <p class="eyebrow">Practice</p><h2 id="playground-title">JavaScript demonstrations</h2><p>Try each example to see what happens when JavaScript handles an event.</p>
+  <div class="demo-grid">
+    <article class="panel demo"><h3>Counter</h3><p>A variable holds the count. Click events change the value and update the display.</p><output id="counter-value" aria-label="Count">0</output><div class="actions"><button type="button" class="button button-secondary" data-count="-1" aria-label="Decrease count">−</button><button type="button" class="button button-primary" data-count="1" aria-label="Increase count">+</button><button type="button" class="button button-secondary" data-count="reset">Reset</button></div></article>
+    <article class="panel demo"><h3>Greeting generator</h3><p>A function takes the name you enter and uses it to build a greeting.</p><form id="greeting-form"><div class="field"><label for="greeting-name">Your name</label><input id="greeting-name" maxlength="40" placeholder="e.g. Mohammed" required></div><button type="submit" class="button button-primary">Say Hello</button></form><p class="demo-result" id="greeting-output" role="status"></p></article>
+    <article class="panel demo"><h3>Style switcher</h3><p>A click toggles a CSS class on a DOM element. The class changes how it looks.</p><div class="switch-sample" id="switch-sample">Try changing my style</div><button id="style-switch" type="button" class="button button-secondary" aria-pressed="false" aria-controls="switch-sample">Toggle Appearance</button></article>
+  </div>
+</section>
+        <section class="course-section" id="knowledge-check" hidden aria-labelledby="quiz-title"><p class="eyebrow">Knowledge check</p><h2 id="quiz-title">Test your JavaScript</h2><p>Choose an answer to get feedback before moving on.</p><div class="panel quiz" data-quiz="js"></div></section>
+        <div class="course-next"><a class="button button-secondary" href="home.html#learning-paths">Back to Courses<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
       </div>
-      <div class="exercise-actions">
-        <button class="button" type="button" id="run-exercise" disabled>Run exercise <span aria-hidden="true">▷</span></button>
-        <button class="button secondary-button" type="button" id="reset-exercise" disabled>Reset</button>
-      </div>
-      <div class="lesson-card source-card exercise-feedback" id="exercise-feedback" role="status" aria-atomic="true">
-        <p class="feedback-title" id="feedback-title">Ready to run your exercise</p>
-        <p id="feedback-detail">Add a click listener, call your function, then update the greeting.</p>
-        <pre id="console-output" aria-label="Console output" hidden></pre>
-      </div>
-      <a class="button next-lesson" href="overview.html">Finish learning path <span aria-hidden="true">→</span></a>
-      <div id="sandbox-host" hidden></div>
-    </section>
+    </div>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first website.</p>

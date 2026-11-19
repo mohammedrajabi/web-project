@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn CSS selectors, properties, and the box model, then practise styling your welcome page.">
-  <title>CSS Foundations | CodeStart</title>
+  <meta name="description" content="Turn plain HTML into a design of your own. Experiment with color, spacing, and layout in a live playground.">
+  <title>Learn CSS — Bring Your Website to Life | CodeStart</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/course.css">
   <script src="js/main.js" defer></script>
-  <link rel="stylesheet" href="css/css-lesson.css">
-  <script src="js/css-lesson.js" defer></script>
+  <script src="js/course.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/css-playground.js" defer></script>
 </head>
-<body>
+<body class="course-page">
   <a class="skip-link button" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="container header-inner">
@@ -33,109 +35,69 @@
     </div>
   </header>
 
-  <main class="container lesson-main css-lesson" id="main" tabindex="-1">
-    <header class="lesson-heading">
-      <p class="eyebrow">02 <span aria-hidden="true">/</span> CSS foundations</p>
-      <h1>CSS: style and arrange your page</h1>
-      <p>Lesson 2 of 3 &nbsp;/&nbsp; Structure → Style → Interactivity</p>
-    </header>
-
-    <section class="lesson-section" aria-labelledby="css-introduction">
-      <h2 id="css-introduction">What is CSS?</h2>
-      <p class="section-intro">CSS (Cascading Style Sheets) controls how HTML looks. Use rules to change text, spacing, borders, and page layout while keeping content separate from presentation.</p>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="selectors-properties">
-      <h2 id="selectors-properties">Selectors and properties</h2>
-      <div class="element-grid">
-        <article class="lesson-card element-card selector-card">
-          <h3>01 / Select an element</h3>
-          <ul>
-            <li>Type selector: <code>p</code></li>
-            <li>Class selector: <code>.lesson</code></li>
-            <li>ID selector: <code>#welcome</code></li>
-          </ul>
-        </article>
-        <article class="lesson-card element-card selector-card">
-          <h3>02 / Set a property</h3>
-          <ul>
-            <li><code>font-size</code>: text size</li>
-            <li><code>margin</code>: outer spacing</li>
-            <li><code>border</code>: visible outline</li>
-          </ul>
-        </article>
-        <article class="lesson-card element-card selector-card">
-          <h3>03 / Choose a value</h3>
-          <ul>
-            <li><code>p { font-size: 18px; }</code></li>
-            <li><code>.lesson { padding: 24px; }</code></li>
-            <li>A declaration is property + value.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="box-model-title">
-      <h2 id="box-model-title">Understand the box model</h2>
-      <div class="lesson-columns box-model-grid">
-        <figure class="lesson-card box-margin" aria-label="The CSS box model, from outside to inside: margin, border, padding, and content.">
-          <div class="eyebrow">Margin</div>
-          <div class="box-border">
-            <div class="eyebrow">Border</div>
-            <div class="box-padding">
-              <div class="eyebrow">Padding</div>
-              <div class="box-content">CONTENT — text or other elements</div>
-            </div>
-          </div>
-        </figure>
-        <div class="box-explanation">
-          <h3>Every element is a box</h3>
-          <ul>
-            <li>Content holds the text or media.</li>
-            <li>Padding adds space inside the border.</li>
-            <li>Border outlines the element.</li>
-            <li>Margin separates it from nearby elements.</li>
-          </ul>
-          <p>Tip: <code>box-sizing: border-box</code> keeps width calculations predictable.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="lesson-section" aria-labelledby="code-example">
-      <h2 id="code-example">Code example</h2>
-      <div class="lesson-columns example-grid">
-        <div class="lesson-card source-card">
-          <p class="code-caption">styles.css &nbsp;•&nbsp; CSS</p>
-          <pre class="css-example-code" id="css-example" tabindex="0" aria-label="CSS lesson card example"><code>.lesson {
+  <main id="main" tabindex="-1">
+    <div class="course-hero tone-css"><div class="container">
+      <a class="back-link" href="home.html#learning-paths">← All courses</a>
+      <p class="eyebrow">Style · Beginner · 7 lessons</p>
+      <h1>Learn CSS <span>Bring Your Website to Life</span></h1><p class="lede">Turn plain HTML into a design of your own. Experiment with color, spacing, and layout in a live playground.</p>
+      <div class="actions"><a class="button button-primary" href="#lessons">Start the Lessons<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a class="button button-secondary" href="#playground">Jump to Practice</a></div>
+    </div></div>
+    <div class="container course-layout tone-css" data-course="css">
+      <aside class="panel lesson-sidebar" aria-label="Course contents">
+        <div class="sidebar-top"><h2>Course contents</h2><p id="lesson-progress-label" role="status">0 of 7 lessons complete</p><progress value="0" max="7" aria-labelledby="lesson-progress-label"></progress></div>
+        <nav aria-label="Lessons"><a href="#lesson-1"><span class="lesson-number">01</span>What is CSS?<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-2"><span class="lesson-number">02</span>Selectors<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-3"><span class="lesson-number">03</span>Colors and backgrounds<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-4"><span class="lesson-number">04</span>Fonts and typography<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-5"><span class="lesson-number">05</span>Margin and padding<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-6"><span class="lesson-number">06</span>Flexbox<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#lesson-7"><span class="lesson-number">07</span>Responsive design<span class="lesson-check" hidden><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg><span class="sr-only">Completed</span></span></a><a href="#playground"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 5 12 7-12 7Z"/></svg> Practice</a><a href="#knowledge-check"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> Knowledge check</a></nav>
+      </aside>
+      <div class="course-content">
+        <section id="lessons" class="course-section" aria-labelledby="lessons-title"><p class="eyebrow">Lessons</p><h2 id="lessons-title">CSS fundamentals</h2>
+          <article class="panel lesson" id="lesson-1"><p class="eyebrow">Lesson 1 of 7</p><h3 tabindex="-1">What is CSS?</h3><p>Cascading Style Sheets describe how HTML looks. A CSS rule pairs a selector with declarations. Each declaration assigns a value to a property.</p><pre tabindex="0"><code>p {
+  color: #334155;
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-2">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-2" hidden><p class="eyebrow">Lesson 2 of 7</p><h3 tabindex="-1">Selectors</h3><p>A selector chooses the elements a rule applies to. Use p for all paragraphs, .note for elements with class="note", and #intro for the element with id="intro".</p><pre tabindex="0"><code>p { line-height: 1.6; }
+.note { font-weight: 700; }
+#intro { max-width: 60ch; }</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-3">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-3" hidden><p class="eyebrow">Lesson 3 of 7</p><h3 tabindex="-1">Colors and backgrounds</h3><p>The color property sets foreground text color. Use background-color to paint the surface behind it. Check contrast whenever you pick a pair of colors.</p><pre tabindex="0"><code>.card {
+  color: #f8fafc;
+  background-color: #1e293b;
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-4">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-4" hidden><p class="eyebrow">Lesson 4 of 7</p><h3 tabindex="-1">Fonts and typography</h3><p>Set a font family with fallbacks so the browser can choose the next available font. Use font-size for text size and line-height for the distance between lines.</p><pre tabindex="0"><code>body {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-5">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-5" hidden><p class="eyebrow">Lesson 5 of 7</p><h3 tabindex="-1">Margin and padding</h3><p>Padding adds room inside the border, between the content and the edge. Margin adds room outside the border, between this element and its neighbors.</p><pre tabindex="0"><code>.card {
   padding: 24px;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  color: #F8FAFC;
-}</code></pre>
-        </div>
-        <div class="lesson-card preview-card css-preview-card">
-          <p class="code-caption" id="preview-label">Browser preview</p>
-          <iframe id="css-preview" title="Browser preview of the CSS example" sandbox="allow-same-origin" srcdoc="&lt;article&gt;&lt;h1&gt;Your first lesson&lt;/h1&gt;&lt;p&gt;A little CSS makes a big difference.&lt;/p&gt;&lt;/article&gt;"></iframe>
-          <p class="preview-metrics" id="preview-metrics">24px padding &nbsp;/&nbsp; 1px border &nbsp;/&nbsp; 12px radius</p>
-        </div>
-      </div>
-    </section>
+  border: 1px solid #64748b;
+  margin: 16px 0;
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-6">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-6" hidden><p class="eyebrow">Lesson 6 of 7</p><h3 tabindex="-1">Flexbox</h3><p>Flexbox lays out the direct children of a container along a row or column. Set gap for spacing and let children wrap when they need more room.</p><pre tabindex="0"><code>.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#lesson-7">Next Lesson <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+          <article class="panel lesson" id="lesson-7" hidden><p class="eyebrow">Lesson 7 of 7</p><h3 tabindex="-1">Responsive design</h3><p>Start with a layout that fits a small screen. Use a media query to add columns when enough space is available. Resize a browser window to see the rule take effect.</p><pre tabindex="0"><code>.cards { display: grid; gap: 1rem; }
 
-    <section class="lesson-section" aria-labelledby="practice-title">
-      <h2 id="practice-title">Practice: style your welcome page</h2>
-      <p class="section-intro" id="practice-instructions">Add a class to your HTML. Set the heading size, apply 24px of padding to a content box, and add a 1px border.</p>
-      <div class="lesson-card workspace css-workspace">
-        <label class="code-caption" for="css-editor">Your workspace &nbsp;/&nbsp; <span>styles.css</span></label>
-        <div class="editor-area">
-          <textarea id="css-editor" aria-describedby="practice-instructions css-feedback" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" disabled>.welcome { padding: 24px; border: 1px solid #334155; }
-h1 { font-size: 32px; }</textarea>
-        </div>
-        <p class="css-feedback" id="css-feedback" role="status">Check your work: <span data-check="selector">class selector</span><span aria-hidden="true"> • </span><span data-check="type">readable type</span><span aria-hidden="true"> • </span><span data-check="spacing">visible box spacing</span></p>
+@media (min-width: 48rem) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}</code></pre><div class="actions"><button type="button" class="button button-secondary complete-lesson" aria-pressed="false"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg> <span>Mark Complete</span></button><a class="button button-text" href="#playground">Go to Practice <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></article>
+        </section>
+        <section class="course-section" id="playground" hidden aria-labelledby="playground-title">
+  <p class="eyebrow">Practice</p><h2 id="playground-title">CSS playground</h2><p>Move a slider or choose a color to see the card and its CSS update.</p>
+  <div class="panel style-lab">
+    <form id="style-controls">
+      <div class="lab-toolbar"><h3>Style controls</h3><button type="reset" class="button button-secondary">Reset</button></div>
+      <div class="color-fields"><div class="field"><label for="style-bg">Background color</label><input id="style-bg" name="background" type="color" value="#22d3ee"></div><div class="field"><label for="style-color">Text color</label><input id="style-color" name="color" type="color" value="#0f172a"></div></div>
+      <div class="field slider-field"><label for="style-radius">Border radius</label><output for="style-radius" id="output-radius">18 px</output><input id="style-radius" name="radius" type="range" min="0" max="48" value="18"></div><div class="field slider-field"><label for="style-padding">Padding</label><output for="style-padding" id="output-padding">24 px</output><input id="style-padding" name="padding" type="range" min="8" max="48" value="24"></div><div class="field slider-field"><label for="style-size">Font size</label><output for="style-size" id="output-size">18 px</output><input id="style-size" name="size" type="range" min="12" max="32" value="18"></div>
+      <div class="field"><label for="style-align">Text alignment</label><select id="style-align" name="align"><option value="left">Left</option><option value="center">Center</option><option value="right">Right</option></select></div>
+    </form>
+    <div class="style-output"><p class="pane-title">Live preview</p><div id="sample-card"><strong>Make it yours</strong><p>A little CSS changes how everything feels.</p></div><p class="pane-title">Generated CSS</p><pre tabindex="0"><code id="generated-css"></code></pre></div>
+  </div>
+</section>
+        <section class="course-section" id="knowledge-check" hidden aria-labelledby="quiz-title"><p class="eyebrow">Knowledge check</p><h2 id="quiz-title">Test your CSS</h2><p>Choose an answer to get feedback before moving on.</p><div class="panel quiz" data-quiz="css"></div></section>
+        <div class="course-next"><a class="button button-secondary" href="subtopic3.html">Continue to JavaScript<svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div>
       </div>
-      <a class="button next-lesson" href="subtopic3.html">Next: JavaScript <span aria-hidden="true">→</span></a>
-    </section>
+    </div>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first website.</p>
