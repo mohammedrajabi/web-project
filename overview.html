@@ -455,12 +455,26 @@
           <li>Typography and spacing adjust for smaller screens.</li>
         </ul>
         <p><strong>Responsive Design Evidence</strong></p>
-        <ul class="evidence-list">
-          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Desktop Screenshot</strong></li>
-          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Tablet Screenshot</strong></li>
-          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Mobile Screenshot</strong></li>
-        </ul>
-        <p><em>Screenshots will be added later to demonstrate the responsive implementation.</em></p>
+        <div class="document-gallery responsive-evidence">
+          <figure class="lesson-card document-design">
+            <a class="document-design-image design-thumbnail" href="images/responsive/desktop.png" data-design-viewer data-design-title="Desktop — Responsive design screenshot" aria-label="View desktop responsive design screenshot">
+              <img src="images/responsive/desktop.png" alt="CodeStart desktop responsive design screenshot" width="957" height="782" loading="lazy">
+            </a>
+            <figcaption class="document-image-caption"><span>Desktop</span><a class="gallery-open" href="images/responsive/desktop.png" data-design-viewer data-design-title="Desktop — Responsive design screenshot" aria-label="View desktop responsive design screenshot">View screenshot</a></figcaption>
+          </figure>
+          <figure class="lesson-card document-design">
+            <a class="document-design-image design-thumbnail" href="images/responsive/tablet.png" data-design-viewer data-design-title="Tablet — Responsive design screenshot" aria-label="View tablet responsive design screenshot">
+              <img src="images/responsive/tablet.png" alt="CodeStart tablet responsive design screenshot" width="461" height="780" loading="lazy">
+            </a>
+            <figcaption class="document-image-caption"><span>Tablet</span><a class="gallery-open" href="images/responsive/tablet.png" data-design-viewer data-design-title="Tablet — Responsive design screenshot" aria-label="View tablet responsive design screenshot">View screenshot</a></figcaption>
+          </figure>
+          <figure class="lesson-card document-design">
+            <a class="document-design-image design-thumbnail" href="images/responsive/mobile.png" data-design-viewer data-design-title="Mobile — Responsive design screenshot" aria-label="View mobile responsive design screenshot">
+              <img src="images/responsive/mobile.png" alt="CodeStart mobile responsive design screenshot" width="354" height="742" loading="lazy">
+            </a>
+            <figcaption class="document-image-caption"><span>Mobile</span><a class="gallery-open" href="images/responsive/mobile.png" data-design-viewer data-design-title="Mobile — Responsive design screenshot" aria-label="View mobile responsive design screenshot">View screenshot</a></figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="overview-section" id="ai-plan" aria-labelledby="ai-plan-title" tabindex="-1">
@@ -517,17 +531,62 @@
             <tbody>
               <tr>
                 <th scope="row">ChatGPT</th>
-                <td>Coding</td>
-                <td><span class="pending-value">Add actual prompt later</span></td>
-                <td>Website code</td>
-                <td><span class="pending-value">Add specific modifications later</span></td>
+                <td>Developing the HTML Learning page.</td>
+                <td><strong>Summarized development prompts</strong><br>Implement the HTML Learning page (<code>subtopic1.html</code>) for CodeStart using the attached '02 HTML — High fidelity' mockup. Recreate the layout, sections, typography, and visual design. Include beginner-friendly HTML lessons, code examples, interactive exercises, a coding playground, and quizzes. Use HTML5, CSS3, and Vanilla JavaScript. Maintain the existing CodeStart colors, Inter typography, and responsive design.</td>
+                <td>HTML Learning page implementation, including page structure, styling, and interactive functionality.</td>
+                <td>Improved learning content, adjusted layouts, and fixed bugs.</td>
+              </tr>
+              <tr>
+                <th scope="row">ChatGPT</th>
+                <td>Developing the CSS Learning page.</td>
+                <td><strong>Summarized development prompts</strong><br>Implement the CSS Learning page (<code>subtopic2.html</code>) for CodeStart using the attached '03 CSS — High fidelity' mockup. Recreate the design and learning sections. Include CSS lessons, practical code examples, interactive styling demonstrations, a live preview, and quizzes. Use HTML5, CSS3, and Vanilla JavaScript. Preserve CodeStart's existing color palette, typography, navigation, and responsive layout.</td>
+                <td>CSS Learning page implementation, including styling, learning content, and interactive demonstrations.</td>
+                <td>Improved layouts and fixed bugs.</td>
+              </tr>
+              <tr>
+                <th scope="row">ChatGPT</th>
+                <td>Developing the JavaScript Learning page.</td>
+                <td><strong>Summarized development prompts</strong><br>Implement the JavaScript Learning page (<code>subtopic3.html</code>) for CodeStart using the attached '04 JavaScript — High fidelity' mockup. Follow the reference design and include beginner-friendly JavaScript lessons, code examples, interactive demonstrations, a functional JavaScript playground, and quizzes. Use HTML5, CSS3, and Vanilla JavaScript. Maintain consistent colors, typography, navigation, and responsiveness.</td>
+                <td>JavaScript Learning page implementation, including learning content, interactive features, and coding exercises.</td>
+                <td>Improved learning content and fixed bugs.</td>
               </tr>
               <tr>
                 <th scope="row">Figma AI</th>
-                <td>Designing</td>
-                <td><span class="pending-value">Add actual prompt later</span></td>
-                <td>Website designs</td>
-                <td><span class="pending-value">Add specific modifications later</span></td>
+                <td>Creating low-fidelity wireframes and high-fidelity mockups for all seven CodeStart pages.</td>
+                <td>
+                  <details class="ai-prompt">
+                    <summary>View full prompt (exact text)</summary>
+                    <div class="ai-prompt-content">
+                      <p>I have uploaded screenshots of my existing CodeStart educational website.</p>
+                      <p>Using these screenshots as references, create two designs for each page:</p>
+                      <ol>
+                        <li>
+                          <strong>Low-Fidelity Wireframe</strong>
+                          <ul>
+                            <li>Convert the screenshot into a simple grayscale wireframe.</li>
+                            <li>Remove colors, shadows, and decorative styling.</li>
+                            <li>Keep the same layout, navigation, sections, buttons, and content placement.</li>
+                            <li>Use basic boxes, lines, and placeholder elements.</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <strong>High-Fidelity Mockup</strong>
+                          <ul>
+                            <li>Recreate the original screenshot as accurately as possible.</li>
+                            <li>Preserve the existing colors, fonts, spacing, navigation, and layout.</li>
+                            <li>Keep all sections and components in their original positions.</li>
+                            <li>Do not redesign the website or introduce new features.</li>
+                          </ul>
+                        </li>
+                      </ol>
+                      <p>Create separate, clearly labeled, editable Figma frames for both versions.</p>
+                      <p>The final result should include 14 designs: seven low-fidelity wireframes and seven high-fidelity mockups.</p>
+                      <p>The designs must match the existing CodeStart website because the website has already been developed.</p>
+                    </div>
+                  </details>
+                </td>
+                <td>7 low-fidelity wireframes and 7 high-fidelity mockups representing all seven CodeStart pages.</td>
+                <td><span class="pending-value">To be added later after documenting the team's actual design adjustments.</span></td>
               </tr>
               <tr>
                 <th scope="row">Claude</th>

@@ -184,6 +184,38 @@
   font-style: italic;
 }
 
+#ai-documentation table {
+  min-width: 1000px;
+}
+
+#ai-documentation th:nth-child(3),
+#ai-documentation td:nth-child(3) {
+  min-width: 320px;
+  width: 36%;
+}
+
+#ai-documentation .ai-prompt summary {
+  min-height: 44px;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#ai-documentation .ai-prompt-content p,
+#ai-documentation .ai-prompt-content ol,
+#ai-documentation .ai-prompt-content ul {
+  margin-top: 12px;
+}
+
+#ai-documentation .ai-prompt-content ol,
+#ai-documentation .ai-prompt-content ul {
+  padding-left: 22px;
+}
+
+#ai-documentation .ai-prompt-content ul {
+  list-style: disc;
+}
+
 .testing-note {
   padding: 20px 24px;
   border-left: 3px solid var(--accent);
@@ -295,6 +327,10 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.responsive-evidence .document-design-image {
+  height: 260px;
 }
 
 .document-placeholder {
