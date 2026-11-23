@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CodeStart project documentation covering requirements, site structure, user journeys, design, responsive layouts, and responsible AI development.">
+  <title>Project Overview & Documentation | CodeStart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/overview.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="overview-page">
+  <a class="skip-link button" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="home.html"><span aria-hidden="true">&lt;/&gt;</span> CodeStart</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" hidden>
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="subtopic1.html">HTML</a></li>
+          <li><a href="subtopic2.html">CSS</a></li>
+          <li><a href="subtopic3.html">JavaScript</a></li>
+          <li><a href="planning-design.html">Planning &amp; Design</a></li>
+          <li><a href="reflection-ai-report.html">Reflection &amp; AI</a></li>
+          <li><a href="overview.html" aria-current="page">Overview</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <header class="overview-hero">
+      <div class="container">
+        <p class="eyebrow">CodeStart / Project documentation</p>
+        <h1>Project Overview<br><span>&amp; Documentation</span></h1>
+      </div>
+    </header>
+    <div class="container overview-layout">
+      <aside class="overview-sidebar" aria-label="Documentation contents">
+        <details open>
+          <summary>On this page</summary>
+          <nav aria-label="Documentation sections"><ul>
+            <li><a href="#project-overview">Project Overview</a></li>
+            <li><a href="#requirements-analysis">Requirements Analysis</a></li>
+            <li><a href="#site-map">Website Site Map</a></li>
+            <li><a href="#user-journey">User Journey Map</a></li>
+            <li><a href="#low-fidelity">Low-Fidelity Wireframes</a></li>
+            <li><a href="#high-fidelity">High-Fidelity Mockups</a></li>
+            <li><a href="#style-guide">UI Style Guide</a></li>
+            <li><a href="#responsive-design">Responsive Design Plan</a></li>
+            <li><a href="#ai-plan">AI Utilization Plan</a></li>
+            <li><a href="#ai-documentation">AI-Assisted Development Documentation</a></li>
+            <li><a href="#ethical-legal">Ethical and Legal Considerations</a></li>
+          </ul></nav>
+        </details>
+      </aside>
+      <div class="overview-content">
+      <section class="overview-section" id="project-overview" aria-labelledby="project-overview-title" tabindex="-1">
+        <h2 id="project-overview-title">Project Overview</h2>
+        <p><strong>Website Title:</strong> CodeStart</p>
+        <p><strong>Website Category:</strong> Educational Website</p>
+        <h3>Problem Statement</h3>
+        <p>Learning web development can be challenging for beginners and students, especially when learning relies mainly on reading explanations without practical experience. CodeStart aims to make learning HTML, CSS, and JavaScript easier, more accessible, and more interactive by combining educational content with practical coding activities.</p>
+        <h3>Target Audience</h3>
+        <p>CodeStart is designed for beginners and students who want to learn the fundamentals of web development. The website provides an accessible learning environment where users can explore programming concepts, practice coding, and test their understanding.</p>
+        <h3>Project Objectives</h3>
+        <p>The main objectives of CodeStart are:</p>
+        <ol>
+          <li>Make learning HTML, CSS, and JavaScript easier for beginners.</li>
+          <li>Provide interactive coding exercises where users can practice what they learn.</li>
+          <li>Allow users to test their knowledge through quizzes.</li>
+          <li>Enable learners to track their progress and completed lessons.</li>
+          <li>Create a beginner-friendly website that works across desktop, tablet, and mobile devices.</li>
+        </ol>
+      </section>
+
+      <section class="overview-section" id="requirements-analysis" aria-labelledby="requirements-analysis-title" tabindex="-1">
+        <h2 id="requirements-analysis-title">Requirements Analysis</h2>
+        <h3>Functional Requirements</h3>
+        <p>Functional requirements describe what the website allows users to do.</p>
+        <div class="document-table" role="region" aria-label="Functional requirements table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Requirement</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">FR01</th>
+                <td>User Registration</td>
+                <td>Provide an optional demonstration registration form without creating actual accounts.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR02</th>
+                <td>Form Validation</td>
+                <td>Validate first name, last name, mobile number, and email address, displaying appropriate feedback.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR03</th>
+                <td>Navigation System</td>
+                <td>Allow users to navigate between all seven website pages.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR04</th>
+                <td>Interactive Playgrounds</td>
+                <td>Allow users to practice HTML, CSS, and JavaScript through live coding exercises.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR05</th>
+                <td>Interactive Quizzes</td>
+                <td>Allow users to test their understanding of learning topics.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR06</th>
+                <td>Lesson Completion</td>
+                <td>Allow users to mark lessons as completed.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR07</th>
+                <td>Progress Tracking</td>
+                <td>Save learning progress locally so it remains available after refreshing the page.</td>
+              </tr>
+              <tr>
+                <th scope="row">FR08</th>
+                <td>Course Selection</td>
+                <td>Allow users to select HTML, CSS, or JavaScript learning courses without requiring registration.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Non-Functional Requirements</h3>
+        <p>Non-functional requirements describe how the website should perform and behave.</p>
+        <div class="document-table" role="region" aria-label="Non-functional requirements table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Requirement</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">NFR01</th>
+                <td>Performance</td>
+                <td>The website should load efficiently and provide responsive interactions.</td>
+              </tr>
+              <tr>
+                <th scope="row">NFR02</th>
+                <td>Accessibility</td>
+                <td>The interface should provide readable content, clear navigation, and accessible controls.</td>
+              </tr>
+              <tr>
+                <th scope="row">NFR03</th>
+                <td>Security</td>
+                <td>Registration inputs must be validated. The registration demonstration does not create backend user accounts.</td>
+              </tr>
+              <tr>
+                <th scope="row">NFR04</th>
+                <td>Usability</td>
+                <td>The website should provide clear instructions, simple navigation, and beginner-friendly learning activities.</td>
+              </tr>
+              <tr>
+                <th scope="row">NFR05</th>
+                <td>Responsiveness</td>
+                <td>The website must adapt to desktop, tablet, and mobile screen sizes.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="testing-note"><strong>Testing status:</strong> The team has tested the website&#x27;s responsiveness and confirmed that the responsive layouts work. Separate performance, accessibility, and security test results have not yet been documented.</p>
+      </section>
+
+      <section class="overview-section" id="site-map" aria-labelledby="site-map-title" tabindex="-1">
+        <h2 id="site-map-title">Website Site Map</h2>
+        <p>The CodeStart website contains exactly seven pages.</p>
+        <nav class="site-map" aria-label="Website site map">
+          <p class="site-map-root">CodeStart</p>
+          <ul>
+            <li><a href="home.html"><span>1</span>Home</a></li>
+            <li><a href="subtopic1.html"><span>2</span>HTML Learning</a></li>
+            <li><a href="subtopic2.html"><span>3</span>CSS Learning</a></li>
+            <li><a href="subtopic3.html"><span>4</span>JavaScript Learning</a></li>
+            <li><a href="planning-design.html"><span>5</span>Planning &amp; Design</a></li>
+            <li><a href="reflection-ai-report.html"><span>6</span>Reflection &amp; AI Usage Report</a></li>
+            <li><a href="overview.html"><span>7</span>Overview</a></li>
+          </ul>
+        </nav>
+        <p>The Home Page acts as the main entry point, providing navigation to the three learning courses and the project&#x27;s documentation pages.</p>
+        <p>Users can navigate between all seven pages using the website&#x27;s main navigation menu.</p>
+      </section>
+
+      <section class="overview-section" id="user-journey" aria-labelledby="user-journey-title" tabindex="-1">
+        <h2 id="user-journey-title">User Journey Map</h2>
+        <p>The typical learning journey on CodeStart follows these steps:</p>
+        <ol class="journey-list">
+          <li><h3>Step 1 – Visit Home Page</h3><p>The user visits CodeStart and explores the available learning courses.</p></li>
+          <li><h3>Step 2 – Registration (Optional)</h3><p>The user may complete the demonstration registration form. Registration is not required to access lessons.</p></li>
+          <li><h3>Step 3 – Choose a Course</h3><p>The user selects HTML, CSS, or JavaScript.</p></li>
+          <li><h3>Step 4 – Learn</h3><p>The user reads lessons and studies coding examples.</p></li>
+          <li><h3>Step 5 – Practice</h3><p>The user uses an interactive coding playground to experiment with code.</p></li>
+          <li><h3>Step 6 – Take a Quiz</h3><p>The user completes a quiz to test their understanding.</p></li>
+          <li><h3>Step 7 – View Progress</h3><p>The user reviews completed lessons and learning progress.</p></li>
+          <li><h3>Step 8 – Continue Learning</h3><p>The user proceeds to additional lessons or chooses another course.</p></li>
+        </ol>
+      </section>
+
+      <section class="overview-section" id="low-fidelity" aria-labelledby="low-fidelity-title" tabindex="-1">
+        <h2 id="low-fidelity-title">Low-Fidelity Wireframes</h2>
+        <p>Low-fidelity wireframes illustrate the basic structure and organization of each page before detailed visual styling.</p>
+        <p>The following seven wireframes will be included:</p>
+        <div class="document-gallery">
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>Home</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>HTML Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>CSS Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>JavaScript Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>Planning &amp; Design</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>Reflection &amp; AI Usage</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>Low-Fidelity Wireframe</strong></div>
+                    <figcaption>Overview</figcaption>
+                  </figure>
+                </div>
+        <p><em>The actual wireframe images will be added later.</em></p>
+      </section>
+
+      <section class="overview-section" id="high-fidelity" aria-labelledby="high-fidelity-title" tabindex="-1">
+        <h2 id="high-fidelity-title">High-Fidelity Mockups</h2>
+        <p>High-fidelity mockups demonstrate the intended appearance of each page, including the layout, colors, typography, navigation, and interface components.</p>
+        <p>The following seven mockups will be included:</p>
+        <div class="document-gallery">
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>Home</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>HTML Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>CSS Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>JavaScript Learning</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>Planning &amp; Design</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>Reflection &amp; AI Usage</figcaption>
+                  </figure>
+                  <figure class="lesson-card document-design">
+                    <div class="document-placeholder"><span>Image placeholder</span><strong>High-Fidelity Mockup</strong></div>
+                    <figcaption>Overview</figcaption>
+                  </figure>
+                </div>
+        <p><em>The actual high-fidelity images will be added later.</em></p>
+      </section>
+
+      <section class="overview-section" id="style-guide" aria-labelledby="style-guide-title" tabindex="-1">
+        <h2 id="style-guide-title">UI Style Guide</h2>
+        <p>The CodeStart design system ensures consistency across all seven pages.</p>
+        <h3>Color Palette</h3>
+        <div class="document-table" role="region" aria-label="Design system table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Color</th>
+                <th scope="col">Hex Code</th>
+                <th scope="col">Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="palette-label"><span class="palette-dot palette-primary" aria-hidden="true"></span>Primary</span></th>
+                <td><code>#0F172A</code></td>
+                <td>Navigation bar and primary dark surfaces</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="palette-label"><span class="palette-dot palette-secondary" aria-hidden="true"></span>Secondary</span></th>
+                <td><code>#1E293B</code></td>
+                <td>Cards, panels, and form backgrounds</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="palette-label"><span class="palette-dot palette-accent" aria-hidden="true"></span>Accent</span></th>
+                <td><code>#22D3EE</code></td>
+                <td>Buttons, highlights, and active navigation</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="palette-label"><span class="palette-dot palette-background" aria-hidden="true"></span>Background</span></th>
+                <td><code>#080F1D</code></td>
+                <td>Main website background</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="palette-label"><span class="palette-dot palette-text" aria-hidden="true"></span>Text</span></th>
+                <td><code>#F8FAFC</code></td>
+                <td>Main headings and text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Typography</h3>
+        <p>The website uses <strong>Inter</strong> for both headings and body text.</p>
+        <div class="document-table" role="region" aria-label="Design system table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Element</th>
+                <th scope="col">Font Weight</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Main Headings (H1–H3)</th>
+                <td>700 – Bold</td>
+              </tr>
+              <tr>
+                <th scope="row">Subheadings (H4–H6)</th>
+                <td>600 – Semi-Bold</td>
+              </tr>
+              <tr>
+                <th scope="row">Body Text</th>
+                <td>400 – Regular</td>
+              </tr>
+              <tr>
+                <th scope="row">Navigation</th>
+                <td>500 – Medium</td>
+              </tr>
+              <tr>
+                <th scope="row">Buttons</th>
+                <td>600 – Semi-Bold</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>UI Components</h3>
+        <h4>Buttons</h4>
+        <ul>
+          <li>Primary: Cyan background with dark text.</li>
+          <li>Secondary: Dark background with cyan border.</li>
+          <li>Text: Cyan text without a background.</li>
+          <li>Border radius: 8px.</li>
+          <li>Hover transitions: 200ms.</li>
+        </ul>
+        <h4>Cards</h4>
+        <ul>
+          <li>Background: #1E293B.</li>
+          <li>Border: 1px solid #334155.</li>
+          <li>Border radius: 12px.</li>
+          <li>Padding: 24px.</li>
+          <li>Hover: Slight upward movement and subtle shadow.</li>
+        </ul>
+        <h4>Navigation Bar</h4>
+        <ul>
+          <li>Background: #0F172A.</li>
+          <li>Height: Approximately 72px.</li>
+          <li>Active links: #22D3EE.</li>
+          <li>Inactive links: #CBD5E1.</li>
+          <li>Sticky positioning.</li>
+          <li>Collapsible hamburger menu on mobile.</li>
+        </ul>
+        <h4>Forms</h4>
+        <ul>
+          <li>Input background: #1E293B.</li>
+          <li>Border: #475569.</li>
+          <li>Focus border: #22D3EE.</li>
+          <li>Text: #F8FAFC.</li>
+          <li>Border radius: 8px.</li>
+          <li>Error feedback: #F87171.</li>
+          <li>Success feedback: #4ADE80.</li>
+        </ul>
+      </section>
+
+      <section class="overview-section" id="responsive-design" aria-labelledby="responsive-design-title" tabindex="-1">
+        <h2 id="responsive-design-title">Responsive Design Plan</h2>
+        <p>CodeStart uses responsive layouts to support desktop, tablet, and mobile devices.</p>
+        <h3>Desktop</h3>
+        <ul>
+          <li>Full navigation bar with visible links.</li>
+          <li>Lesson sidebar positioned beside the main learning content.</li>
+          <li>Multi-column layouts where appropriate.</li>
+          <li>Coding editor and preview displayed side by side.</li>
+        </ul>
+        <h3>Tablet</h3>
+        <ul>
+          <li>Layout spacing and column widths adjust to the available screen space.</li>
+          <li>Learning content remains readable and accessible.</li>
+          <li>Navigation and interactive components adapt to narrower screens.</li>
+        </ul>
+        <h3>Mobile</h3>
+        <ul>
+          <li>Main navigation changes to a hamburger menu.</li>
+          <li>Lesson sidebar moves above the lesson content.</li>
+          <li>Multi-column sections become single-column layouts.</li>
+          <li>Coding editor and preview stack vertically.</li>
+          <li>Typography and spacing adjust for smaller screens.</li>
+        </ul>
+        <p><strong>Responsive Design Evidence</strong></p>
+        <ul class="evidence-list">
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Desktop Screenshot</strong></li>
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Tablet Screenshot</strong></li>
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Mobile Screenshot</strong></li>
+        </ul>
+        <p><em>Screenshots will be added later to demonstrate the responsive implementation.</em></p>
+      </section>
+
+      <section class="overview-section" id="ai-plan" aria-labelledby="ai-plan-title" tabindex="-1">
+        <h2 id="ai-plan-title">AI Utilization Plan</h2>
+        <p>Three AI-powered tools were selected to support different stages of developing CodeStart.</p>
+        <div class="document-table" role="region" aria-label="AI tools and expected outcomes table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">AI Tool</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Expected Outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ChatGPT</th>
+                <td>Coding assistance</td>
+                <td>Generate and improve website code and functionality.</td>
+              </tr>
+              <tr>
+                <th scope="row">Figma AI</th>
+                <td>Website design</td>
+                <td>Develop visual designs and support interface planning.</td>
+              </tr>
+              <tr>
+                <th scope="row">Claude</th>
+                <td>Testing assistance</td>
+                <td>Review implementation results and identify potential issues.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Responsible AI Usage</h3>
+        <p>The team used AI tools to assist with development rather than relying entirely on generated outputs.</p>
+        <p>Generated work was reviewed and improved during development. This included improving learning content, adjusting layouts, and fixing bugs.</p>
+        <p>AI-assisted development was approached as an iterative process involving generation, review, testing, and improvement.</p>
+      </section>
+
+      <section class="overview-section" id="ai-documentation" aria-labelledby="ai-documentation-title" tabindex="-1">
+        <h2 id="ai-documentation-title">AI-Assisted Development Documentation</h2>
+        <p>The following table documents the AI tools used during development, their purposes, generated outputs, and modifications.</p>
+        <div class="document-table" role="region" aria-label="AI-assisted development documentation table" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">AI Tool</th>
+                <th scope="col">Purpose</th>
+                <th scope="col">Prompt Used</th>
+                <th scope="col">Output Generated</th>
+                <th scope="col">Modifications Made</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ChatGPT</th>
+                <td>Coding</td>
+                <td><span class="pending-value">Add actual prompt later</span></td>
+                <td>Website code</td>
+                <td><span class="pending-value">Add specific modifications later</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Figma AI</th>
+                <td>Designing</td>
+                <td><span class="pending-value">Add actual prompt later</span></td>
+                <td>Website designs</td>
+                <td><span class="pending-value">Add specific modifications later</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Claude</th>
+                <td>Testing</td>
+                <td><span class="pending-value">Add actual prompt later</span></td>
+                <td>Testing feedback</td>
+                <td><span class="pending-value">Add specific modifications later</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>AI Documentation Evidence</h3>
+        <p>The following evidence will be added later:</p>
+        <ul class="evidence-list">
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>ChatGPT Prompt and Output</strong></li>
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Figma AI Prompt and Output</strong></li>
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Claude Prompt and Output</strong></li>
+          <li class="evidence-placeholder"><span>Evidence placeholder</span><strong>Evidence of Modifications</strong></li>
+        </ul>
+        <p>These materials will document how AI was used throughout the project and how the team evaluated its results.</p>
+      </section>
+
+      <section class="overview-section" id="ethical-legal" aria-labelledby="ethical-legal-title" tabindex="-1">
+        <h2 id="ethical-legal-title">Ethical and Legal Considerations</h2>
+        <p>The development of CodeStart should follow ethical and legal principles relevant to educational websites.</p>
+        <p><strong>Academic Integrity:</strong> AI-generated work and external references must be acknowledged appropriately.</p>
+        <p><strong>Copyright:</strong> Any external images, fonts, or educational resources must be used with suitable permissions and attribution.</p>
+        <p><strong>Privacy:</strong> The registration form is a demonstration and does not create user accounts. Users can access learning content without registering.</p>
+        <p><strong>Responsible AI Use:</strong> AI-generated outputs should be reviewed, tested, and modified rather than accepted without evaluation.</p>
+        <p><strong>Accessibility:</strong> The website should remain usable across different devices and support accessible navigation and learning activities.</p>
+      </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-tagline">CodeStart <span aria-hidden="true">/</span> Learn the foundations. Build your first website.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="subtopic1.html">HTML</a></li>
+          <li><a href="subtopic2.html">CSS</a></li>
+          <li><a href="subtopic3.html">JavaScript</a></li>
+          <li><a href="planning-design.html">Planning &amp; Design</a></li>
+          <li><a href="reflection-ai-report.html">Reflection &amp; AI</a></li>
+          <li><a href="overview.html" aria-current="page">Overview</a></li>
+        </ul>
+      </nav>
+      <ul class="footer-meta">
+        <li>© 2026 CodeStart</li>
+        <li>Educational project</li>
+        <li><button class="inline-button" type="button" data-dialog="privacy" aria-haspopup="dialog">Privacy</button></li>
+        <li><button class="inline-button" type="button" data-dialog="accessibility" aria-haspopup="dialog">Accessibility</button></li>
+      </ul>
+    </div>
+  </footer>
+
+  <dialog class="info-dialog" id="privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">Privacy</h2>
+    <p>The registration form is a demo. Your entries are checked in your browser. CodeStart does not send or store the details you enter.</p>
+    <form method="dialog"><button class="button" autofocus>Close</button></form>
+  </dialog>
+  <dialog class="info-dialog" id="accessibility" aria-labelledby="accessibility-title">
+    <h2 id="accessibility-title">Accessibility</h2>
+    <p>Use the Tab key to move through links, buttons, and form fields. The first link skips to the main content. The page respects your device’s reduced-motion setting.</p>
+    <form method="dialog"><button class="button" autofocus>Close</button></form>
+  </dialog>
+</body>
+</html>
