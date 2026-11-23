@@ -12,25 +12,6 @@ const designTypes = {
   high: { directory: "high-fidelity", label: "High-fidelity mockup" },
 };
 const galleryTabs = [...document.querySelectorAll("[data-fidelity]")];
-let previewOpener;
-const previewDialog = document.createElement("dialog");
-previewDialog.className = "design-preview-dialog";
-previewDialog.setAttribute("aria-labelledby", "design-preview-title");
-const previewHeading = document.createElement("div");
-previewHeading.className = "design-preview-heading";
-const previewTitle = document.createElement("h2");
-previewTitle.id = "design-preview-title";
-const closePreview = document.createElement("button");
-closePreview.type = "button";
-closePreview.className = "button design-secondary";
-closePreview.textContent = "Close";
-const previewImage = document.createElement("img");
-previewHeading.append(previewTitle, closePreview);
-previewDialog.append(previewHeading, previewImage);
-document.body.append(previewDialog);
-closePreview.addEventListener("click", () => previewDialog.close());
-previewDialog.addEventListener("close", () => previewOpener?.focus());
-
 function buildGallery(fidelity) {
   const panel = document.querySelector("#" + fidelity + "-gallery");
   const type = designTypes[fidelity];
@@ -53,31 +34,35 @@ function buildGallery(fidelity) {
     const caption = document.createElement("figcaption");
     const title = document.createElement("h3");
     title.textContent = page.name;
-    const open = document.createElement("button");
-    open.type = "button";
+    const open = document.createElement("a");
+    open.href = image.dataset.src;
+    open.dataset.designViewer = "";
+    open.dataset.designTitle = image.alt;
     open.className = "gallery-open";
     open.textContent = "View design";
     open.setAttribute("aria-label", "View " + image.alt);
     open.hidden = true;
+    const thumbnail = document.createElement("a");
+    thumbnail.className = "design-thumbnail";
+    thumbnail.href = image.dataset.src;
+    thumbnail.dataset.designViewer = "";
+    thumbnail.dataset.designTitle = image.alt;
+    thumbnail.setAttribute("aria-label", "View " + image.alt);
+    thumbnail.hidden = true;
+    thumbnail.append(image);
     image.addEventListener("load", () => {
       placeholder.hidden = true;
       image.hidden = false;
       open.hidden = false;
+      thumbnail.hidden = false;
     });
     image.addEventListener("error", () => {
       placeholder.hidden = false;
       image.hidden = true;
       open.hidden = true;
+      thumbnail.hidden = true;
     });
-    open.addEventListener("click", () => {
-      previewOpener = open;
-      previewTitle.textContent = image.alt;
-      previewImage.alt = image.alt;
-      previewImage.src = image.src;
-      previewDialog.showModal();
-      closePreview.focus();
-    });
-    media.append(placeholder, image);
+    media.append(placeholder, thumbnail);
     caption.append(title, open);
     figure.append(media, caption);
     panel.append(figure);
