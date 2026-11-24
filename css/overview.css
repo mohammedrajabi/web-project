@@ -256,7 +256,7 @@
   content: "";
 }
 
-.site-map a {
+.site-map-page {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -266,15 +266,9 @@
   border-radius: 8px;
   background: var(--secondary);
   font-weight: 500;
-  transition: color 200ms, border-color 200ms;
 }
 
-.site-map a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.site-map a span {
+.site-map-page span {
   color: var(--accent);
   font-size: 0.875rem;
 }
