@@ -204,6 +204,54 @@ button {
   top: 5px;
 }
 
+.welcome-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--primary);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  animation: welcome-appear 200ms ease-out;
+}
+
+.welcome-banner p {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.welcome-close {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 24px;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.welcome-close:hover {
+  background: var(--secondary);
+  border-color: var(--accent);
+}
+
+@keyframes welcome-appear {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-banner { animation: none; }
+}
+
 .home-main {
   padding-block: 48px;
 }

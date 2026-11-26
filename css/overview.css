@@ -196,9 +196,72 @@
 
 #ai-documentation .ai-prompt summary {
   min-height: 44px;
+  padding-block: 10px;
   color: var(--accent);
   font-weight: 600;
   cursor: pointer;
+}
+
+#ai-documentation .prompt-source {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+#ai-documentation .prompt-exact {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--primary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#ai-documentation .prompt-collapse,
+#ai-documentation .ai-prompt[open] .prompt-expand,
+#ai-documentation td:has(.ai-prompt[open]) .ai-prompt-preview {
+  display: none;
+}
+
+#ai-documentation .ai-prompt[open] .prompt-collapse {
+  display: inline;
+}
+
+@media (max-width: 740px) {
+  #ai-documentation table {
+    display: block;
+    min-width: 0;
+  }
+
+  #ai-documentation thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  #ai-documentation tbody,
+  #ai-documentation tr,
+  #ai-documentation tbody th,
+  #ai-documentation td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #ai-documentation tbody th {
+    background: var(--primary);
+    color: var(--accent);
+  }
+
+  #ai-documentation td::before {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-weight: 600;
+    content: attr(data-label);
+  }
 }
 
 #ai-documentation .ai-prompt-content p,
@@ -339,14 +402,12 @@
   text-align: center;
 }
 
-.document-placeholder span,
-.evidence-placeholder span {
+.document-placeholder span {
   color: var(--muted);
   font-size: 0.875rem;
 }
 
-.document-placeholder strong,
-.evidence-placeholder strong {
+.document-placeholder strong {
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -376,27 +437,6 @@
 .palette-accent { background: var(--accent); }
 .palette-background { background: var(--background); }
 .palette-text { background: var(--text); }
-
-.overview-section > .evidence-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding: 0;
-  margin-block: 24px;
-  list-style: none;
-}
-
-.overview-section .evidence-placeholder {
-  display: grid;
-  align-content: center;
-  gap: 8px;
-  min-height: 130px;
-  margin: 0;
-  padding: 24px;
-  border: 1px dashed var(--input-border);
-  border-radius: 12px;
-  background: var(--primary);
-}
 
 @media (max-width: 1100px) {
   .overview-layout {
@@ -434,8 +474,7 @@
 @media (max-width: 480px) {
   .overview-sidebar nav ul,
   .document-gallery,
-  .overview-section > .journey-list,
-  .overview-section > .evidence-list {
+  .overview-section > .journey-list {
     grid-template-columns: minmax(0, 1fr);
   }
 }

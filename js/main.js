@@ -32,6 +32,39 @@ document.querySelector(".site-header").addEventListener("keydown", (event) => {
 mobileLayout.addEventListener("change", resetMenu);
 resetMenu();
 
+const welcomeBanner = document.querySelector("#welcome-banner");
+const welcomeNameKey = "codestart-first-name";
+const welcomeDismissedKey = "codestart-welcome-dismissed";
+let welcomeDismissed = false;
+
+function showWelcome(firstName) {
+  if (!welcomeBanner || !firstName || welcomeDismissed) return;
+  welcomeBanner.querySelector("#welcome-message").textContent =
+    `Welcome to CodeStart, ${firstName}! 👋 You're ready to start learning HTML, CSS, and JavaScript.`;
+  welcomeBanner.hidden = false;
+}
+
+if (welcomeBanner) {
+  // Storage can be unavailable in restricted browser contexts.
+  try {
+    welcomeDismissed = sessionStorage.getItem(welcomeDismissedKey) === "true";
+    showWelcome(sessionStorage.getItem(welcomeNameKey));
+  } catch {
+    // Registration and the banner still work for this page visit.
+  }
+
+  welcomeBanner.querySelector(".welcome-close").addEventListener("click", () => {
+    welcomeDismissed = true;
+    welcomeBanner.hidden = true;
+    try {
+      sessionStorage.setItem(welcomeDismissedKey, "true");
+    } catch {
+      // Keep the in-memory dismissal if storage is unavailable.
+    }
+    document.querySelector("#main").focus({ preventScroll: true });
+  });
+}
+
 const registration = document.querySelector("#registration-form");
 if (registration) {
   const formStatus = registration.querySelector(".form-status");
@@ -83,6 +116,17 @@ if (registration) {
     formStatus.textContent = invalidFields.length
       ? ""
       : "Your details passed validation. This form is a demo only.";
+    if (invalidFields.length === 0) {
+      const firstName = registration.elements.firstName.value;
+      welcomeDismissed = false;
+      try {
+        sessionStorage.setItem(welcomeNameKey, firstName);
+        sessionStorage.removeItem(welcomeDismissedKey);
+      } catch {
+        // A storage restriction must not interrupt successful validation.
+      }
+      showWelcome(firstName);
+    }
     invalidFields[0]?.input.focus();
   });
 
