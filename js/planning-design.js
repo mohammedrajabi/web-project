@@ -23,19 +23,20 @@ function buildGallery(fidelity) {
     const placeholder = document.createElement("div");
     placeholder.className = "design-placeholder";
     const placeholderLabel = document.createElement("span");
-    placeholderLabel.textContent = "Image placeholder";
+    placeholderLabel.textContent = "Loading design…";
     const designLabel = document.createElement("strong");
     designLabel.textContent = type.label;
     placeholder.append(placeholderLabel, designLabel);
     const image = document.createElement("img");
     image.hidden = true;
     image.alt = page.name + " — " + type.label;
-    image.dataset.src = `images/planning/${type.directory}/${page.file}.png`;
+    const designSource = `images/planning/${type.directory}/optimized/${page.file}.webp`;
+    image.dataset.src = `images/planning/${type.directory}/optimized/${page.file}-thumbnail.webp`;
     const caption = document.createElement("figcaption");
     const title = document.createElement("h3");
     title.textContent = page.name;
     const open = document.createElement("a");
-    open.href = image.dataset.src;
+    open.href = designSource;
     open.dataset.designViewer = "";
     open.dataset.designTitle = image.alt;
     open.className = "gallery-open";
@@ -44,7 +45,7 @@ function buildGallery(fidelity) {
     open.hidden = true;
     const thumbnail = document.createElement("a");
     thumbnail.className = "design-thumbnail";
-    thumbnail.href = image.dataset.src;
+    thumbnail.href = designSource;
     thumbnail.dataset.designViewer = "";
     thumbnail.dataset.designTitle = image.alt;
     thumbnail.setAttribute("aria-label", "View " + image.alt);
@@ -57,6 +58,7 @@ function buildGallery(fidelity) {
       thumbnail.hidden = false;
     });
     image.addEventListener("error", () => {
+      placeholderLabel.textContent = "Design could not be loaded";
       placeholder.hidden = false;
       image.hidden = true;
       open.hidden = true;

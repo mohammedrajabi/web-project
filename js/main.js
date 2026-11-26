@@ -126,6 +126,12 @@ if (registration) {
         // A storage restriction must not interrupt successful validation.
       }
       showWelcome(firstName);
+      welcomeBanner?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+        block: "start",
+      });
     }
     invalidFields[0]?.input.focus();
   });
